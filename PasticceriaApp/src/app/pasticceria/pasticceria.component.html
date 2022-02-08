@@ -1,0 +1,36 @@
+<div class="col-md-6" style="padding-left: 50px;">
+<div class="row">
+    <app-pasticceria-form></app-pasticceria-form>
+</div>
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Dolce</th>
+                <th>Prezzo</th>
+                <th>Quantità</th>
+                <th>Data vendita</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of service.list">
+                <td (click) = "populateForm(d)">{{d.dolceId}}</td>
+                <td (click) = "populateForm(d)">{{d.prezzo}}</td>
+                <td (click) = "populateForm(d)">{{d.quantita}}</td>
+                <td (click) = "populateForm(d)">{{d.messaInVendita}}</td>
+                <td>
+                    <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(d.vetrinaId)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+ 
+
+       
+
+
+
+

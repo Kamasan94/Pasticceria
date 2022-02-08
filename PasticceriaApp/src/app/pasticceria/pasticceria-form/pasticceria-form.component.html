@@ -1,0 +1,34 @@
+
+<!--<p>{{curDate | date:'yyyy-MM-dd'}}</p>-->
+
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="dolceId"
+    [value] = "service.formData.dolceId" />
+
+    <input type="hidden" name="messaInVendita"
+    [value] = "service.formData.dolceId" />
+
+    <div class="form-group">
+        <label>Dolce</label>
+        <input class="form-control form-control-lg" placeholder="Dolce" name="dolceNome"
+            #dolceId="ngModel" [(ngModel)]="service.formData.dolceId"
+            required [class.invalid]="dolceId.invalid && dolceId.touched">
+    </div>        
+
+    <div class="form-group">
+            <label>Prezzo</label>
+            <input class="form-control fomr-control-lg" placeholder="Prezzo dolce" name="Prezzo" #Prezzo="ngModel" [(ngModel)]="service.formData.prezzo"
+            required [class.invalid]="Prezzo.invalid && Prezzo.touched">    
+    </div>
+
+    <div class="form-group">
+        <label>Quantità</label>
+        <input class="form-control fomr-control-lg" placeholder="Quantità" name="Quantità" #Prezzo="ngModel" [(ngModel)]="service.formData.quantita"
+        required [class.invalid]="Prezzo.invalid && Prezzo.touched">    
+</div>
+
+    <div class="form-group" style="padding-top: 3px;">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Salva</button>
+    </div>
+
+</form>

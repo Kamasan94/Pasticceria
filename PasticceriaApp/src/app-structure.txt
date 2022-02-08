@@ -1,0 +1,14 @@
+● src
++---● app
+|   +--● pasticceria
+|   |  |--pasticceria.component.ts|.html
+|   |  +--● pasticceria-form
+|   |  |  |--pasticceria-form.component.ts|.html
+|   |  
+|   +--● shared
+|   |  |--dolce.service.ts
+|   |  |--dolce.model.ts
+|   |
+|   |--app.module.ts
+|
+|--index.html (cdn path for bootstrap & fa icons)

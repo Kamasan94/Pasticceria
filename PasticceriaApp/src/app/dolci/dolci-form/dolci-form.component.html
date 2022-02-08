@@ -1,0 +1,16 @@
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="dolceId"
+    [value] = "service.formData.dolceId" />
+
+    <div class="form-group">
+        <label>Nome dolce</label>
+        <input class="form-control form-control-lg" placeholder="Nome dolce" name="nomeDolce"
+            #nomeDolce="ngModel" [(ngModel)]="service.formData.nome"
+            required [class.invalid]="nomeDolce.invalid && nomeDolce.touched">
+    </div>        
+    
+    <div class="form-group" style="padding-top: 3px;">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">Salva</button>
+    </div>
+
+</form>
