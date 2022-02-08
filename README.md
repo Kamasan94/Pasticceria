@@ -1,7 +1,7 @@
 # Pasticceria
 
-##Front-end
+## Front-end
 Eseguire `ng serve --o`
 
-##Back-end
+## Back-end
 Eseguire bin/release/net6.0/Pasticceria.exe
