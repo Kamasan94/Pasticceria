@@ -12,7 +12,7 @@ export class DolceService {
 
   formData:Dolce = new Dolce();
 
-  readonly baseUrl = 'http://localhost:5057/api/Dolci'
+  readonly baseUrl = 'http://localhost:5000/api/Dolci'
 
   list : Dolce[];
   
