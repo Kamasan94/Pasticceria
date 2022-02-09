@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { DolceService } from '../shared/dolce.service';
 import { Vetrina } from '../shared/vetrina.model';
 import { VetrinaService } from '../shared/vetrina.service';
 
@@ -11,7 +12,7 @@ import { VetrinaService } from '../shared/vetrina.service';
 })
 export class PasticceriaComponent implements OnInit {
 
-  constructor(public service: VetrinaService, private toastr: ToastrService) { }
+  constructor(public service: VetrinaService, public dolceService: DolceService, private toastr: ToastrService) { }
   
   ngOnInit(): void {
     this.service.refreshList();
@@ -21,6 +22,15 @@ export class PasticceriaComponent implements OnInit {
     this.service.formData = Object.assign({},selecetedRecord);
   }
   
+  getNome(dolceId : number){
+    this.dolceService.list.forEach(element => {
+      if(element.dolceId = dolceId)
+        return element.nome;
+      else
+        return null;
+    });
+  }
+
   onDelete(id:number){
     if(confirm("Sicuro di cancellare questa vendita?"))
     {

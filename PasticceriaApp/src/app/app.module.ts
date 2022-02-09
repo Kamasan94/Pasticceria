@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
+
 import { AppComponent } from './app.component';
 import { PasticceriaComponent } from './pasticceria/pasticceria.component';
 import { PasticceriaFormComponent } from './pasticceria/pasticceria-form/pasticceria-form.component';
@@ -25,6 +26,7 @@ import { DolciFormComponent } from './dolci/dolci-form/dolci-form.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent],

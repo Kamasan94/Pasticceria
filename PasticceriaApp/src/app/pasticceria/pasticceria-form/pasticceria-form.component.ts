@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DolceService } from 'src/app/shared/dolce.service';
 import { NgForm } from '@angular/forms';
-import { Dolce } from 'src/app/shared/dolce.model';
 import { ToastrService } from 'ngx-toastr';
 import { VetrinaService } from 'src/app/shared/vetrina.service';
 import { Vetrina } from 'src/app/shared/vetrina.model';
+
 //import { threadId } from 'worker_threads';
 
 @Component({
@@ -15,7 +15,7 @@ import { Vetrina } from 'src/app/shared/vetrina.model';
 
 export class PasticceriaFormComponent implements OnInit {
 
-  constructor(public service:VetrinaService,private toastr:ToastrService){}
+  constructor(public service:VetrinaService, public dolceService:DolceService, private toastr:ToastrService){}
 
   ngOnInit(): void {
   }
@@ -37,7 +37,7 @@ export class PasticceriaFormComponent implements OnInit {
         this.service.refreshList();
         this.toastr.success('Dolce aggiunto con successo in vetrina');
       },
-      err => {console.log(err);}
+      err => {this.toastr.error('Errore durante il salvataggio');}
     );
   }
 
@@ -48,7 +48,7 @@ export class PasticceriaFormComponent implements OnInit {
         this.service.refreshList();
         this.toastr.info('Dolce aggiornato con successo in vetrina');
       },
-      err => {console.log(err);}
+      err => {this.toastr.error('Errore in aggiornamento');}
     );
   }
 

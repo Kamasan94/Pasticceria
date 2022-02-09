@@ -8,13 +8,13 @@
     <input type="hidden" name="messaInVendita"
     [value] = "service.formData.dolceId" />
 
-    <div class="form-group">
-        <label>Dolce</label>
-        <input class="form-control form-control-lg" placeholder="Dolce" name="dolceNome"
-            #dolceId="ngModel" [(ngModel)]="service.formData.dolceId"
-            required [class.invalid]="dolceId.invalid && dolceId.touched">
-    </div>        
-
+    <label>Dolce</label>
+    <select class="form-select" name="dolceId" id="selectDolci" #dolceId="ngModel" [(ngModel)]="service.formData.dolceId">
+        <option *ngFor="let d of dolceService.list" [value]="d.dolceId">
+            {{d.nome}}
+        </option>
+    </select>
+    
     <div class="form-group">
             <label>Prezzo</label>
             <input class="form-control fomr-control-lg" placeholder="Prezzo dolce" name="Prezzo" #Prezzo="ngModel" [(ngModel)]="service.formData.prezzo"

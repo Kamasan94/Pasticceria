@@ -19,9 +19,6 @@ builder.Services.AddDbContext<PasticceriaContext>(options =>
 
 builder.Services.AddCors();
 
-
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -50,6 +47,5 @@ app.MapRazorPages();
 
 app.UseEndpoints(endpoints =>
   endpoints.MapControllers());
-
 
 app.Run();
