@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Dolce } from './dolce.model';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
+
 
 
 @Injectable({
@@ -12,10 +13,24 @@ export class DolceService {
 
   formData:Dolce = new Dolce();
 
-  readonly baseUrl = 'http://localhost:5000/api/Dolci'
+  readonly baseUrl = 'http://localhost:5057/api/Dolci'
 
   list : Dolce[];
-  
+
+  returnNome(id:number){
+    if (this.list){
+      var dolceNome;
+      for (let i = 0; i < this.list.length; i++) {
+        if(this.list[i].dolceId==id){
+          dolceNome = this.list[i].nome;
+        }
+      }
+      return dolceNome;
+    }
+    else
+      return null;
+  }
+
   postDolce() {
     return this.http.post(this.baseUrl,this.formData)
   }

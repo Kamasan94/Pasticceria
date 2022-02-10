@@ -11,7 +11,7 @@ export class VetrinaService {
 
   formData:Vetrina = new Vetrina();
 
-  readonly baseUrl = 'http://localhost:5000/api/Vetrina';
+  readonly baseUrl = 'http://localhost:5057/api/Vetrina';
 
   list :Vetrina[];
 

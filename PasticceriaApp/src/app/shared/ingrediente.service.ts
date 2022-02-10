@@ -1,36 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Ricetta } from './ricetta.model';
+import { Ingrediente } from './ingrediente.model';
+
 @Injectable({
   providedIn: 'root'
 })
-export class RicettaService {
+export class IngredienteService {
 
   constructor(private http:HttpClient) { }
 
-  formData:Ricetta = new Ricetta();
+  formData: Ingrediente = new Ingrediente();
 
   readonly baseUrl = 'http://localhost:5057/api/Dolci'
 
-  list : Ricetta[];
+  list: Ingrediente[];
 
-  postRicetta() {
+  postIngrediente() {
     return this.http.post(this.baseUrl,this.formData)
   }
 
-  putRiceta() {
-    return this.http.put(`${this.baseUrl}/${this.formData.ricettaId}`, this.formData);
+  putIngrediente() {
+    return this.http.put(`${this.baseUrl}/${this.formData.ingredienteId}`, this.formData);
   }
 
-  deleteRicetta(id:number){
+  deleteIngrediente(id:number){
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
   
   refreshList(){
     this.http.get(this.baseUrl)
     .toPromise()
-    .then(res => this.list = res as Ricetta[])
+    .then(res => this.list = res as Ingrediente[])
   }
 
-  
+
+
+
 }

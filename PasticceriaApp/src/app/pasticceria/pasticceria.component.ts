@@ -22,14 +22,6 @@ export class PasticceriaComponent implements OnInit {
     this.service.formData = Object.assign({},selecetedRecord);
   }
   
-  getNome(dolceId : number){
-    this.dolceService.list.forEach(element => {
-      if(element.dolceId = dolceId)
-        return element.nome;
-      else
-        return null;
-    });
-  }
 
   onDelete(id:number){
     if(confirm("Sicuro di cancellare questa vendita?"))

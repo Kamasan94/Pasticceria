@@ -16,7 +16,7 @@
         <tbody>
 
             <tr *ngFor="let d of service.list">
-                <td (click) = "populateForm(d)" >{{d.dolceId}}</td> 
+                <td (click) = "populateForm(d)">{{this.dolceService.returnNome(d.dolceId)}}</td>
                 <td (click) = "populateForm(d)">{{d.prezzo}}</td>
                 <td (click) = "populateForm(d)">{{d.quantita}}</td>
                 <td (click) = "populateForm(d)">{{d.messaInVendita | date }}</td>
