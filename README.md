@@ -7,7 +7,7 @@ Eseguire lo script Pasticceria.sql
 Eseguire bin/release/net6.0/Pasticceria.exe
 
 ## Front-end
-Lanciare il comando `npm -install`
+Lanciare il comando `npm install`
 
 Eseguire `ng serve --o`
 
