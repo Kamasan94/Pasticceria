@@ -11,6 +11,7 @@ import { PasticceriaComponent } from './pasticceria/pasticceria.component';
 import { PasticceriaFormComponent } from './pasticceria/pasticceria-form/pasticceria-form.component';
 import { DolciComponent } from './dolci/dolci.component';
 import { DolciFormComponent } from './dolci/dolci-form/dolci-form.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DolciFormComponent } from './dolci/dolci-form/dolci-form.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AppRoutingModule
 
   ],
   providers: [],

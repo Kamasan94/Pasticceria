@@ -15,13 +15,13 @@
   <h1 class="display-4 text-center">Pasticceria</h1>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <app-pasticceria></app-pasticceria>
-  </div>
-  <div class="col-md-6">
-    <app-dolci></app-dolci>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a  class="navbar-brand" routerLink="/vetrina">Vetrina</a>
+    <a  class="navbar-brand" routerLink="/dolci">Dolci</a>
+</nav>
+
+<div class="content">
+  <router-outlet></router-outlet>
 </div>
 
    
