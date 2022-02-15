@@ -16,7 +16,7 @@ export class AppComponent {
     // This is METHOD 1
     const source = interval(86400000);
     const text = 'Your Text Here';
-    this.subscription = source.subscribe((val) => this.updatePrezzi());
+    this.subscription = source.subscribe((val) => this.updatePrezzi()); 
   }
 
   ngOnDestroy() {

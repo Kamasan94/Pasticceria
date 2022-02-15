@@ -12,6 +12,7 @@ import { PasticceriaFormComponent } from './pasticceria/pasticceria-form/pasticc
 import { DolciComponent } from './dolci/dolci.component';
 import { DolciFormComponent } from './dolci/dolci-form/dolci-form.component';
 import { AppRoutingModule } from './app-routing.module';
+import { RicettaComponent } from './ricetta/ricetta.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
     PasticceriaComponent,
     PasticceriaFormComponent,
     DolciComponent,
-    DolciFormComponent
+    DolciFormComponent,
+    RicettaComponent,
   ],
   imports: [
     BrowserModule,

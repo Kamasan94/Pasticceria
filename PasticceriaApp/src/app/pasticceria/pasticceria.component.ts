@@ -16,6 +16,7 @@ export class PasticceriaComponent implements OnInit {
   
   ngOnInit(): void {
     this.service.refreshList();
+    this.dolceService.refreshList();
   }
 
   populateForm(selecetedRecord:Vetrina){
