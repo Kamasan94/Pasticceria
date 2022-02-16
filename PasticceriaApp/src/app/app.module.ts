@@ -13,6 +13,7 @@ import { DolciComponent } from './dolci/dolci.component';
 import { DolciFormComponent } from './dolci/dolci-form/dolci-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RicettaComponent } from './ricetta/ricetta.component';
+import { RicettaFormComponent } from './ricetta/ricetta-form/ricetta-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RicettaComponent } from './ricetta/ricetta.component';
     DolciComponent,
     DolciFormComponent,
     RicettaComponent,
+    RicettaFormComponent,
   ],
   imports: [
     BrowserModule,

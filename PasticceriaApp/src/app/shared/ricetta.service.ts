@@ -10,7 +10,7 @@ export class RicettaService {
 
   formData:Ricetta = new Ricetta();
 
-  readonly baseUrl = 'http://localhost:5057/api/Dolci'
+  readonly baseUrl = 'http://localhost:5057/api/Ricetta'
 
   list : Ricetta[];
 

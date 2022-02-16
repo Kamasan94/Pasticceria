@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { DolceService } from 'src/app/shared/dolce.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { Dolce } from 'src/app/shared/dolce.model';
+import { RicettaService } from 'src/app/shared/ricetta.service';
+import { Ricetta } from 'src/app/shared/ricetta.model';
 
 @Component({
-  selector: 'app-dolci-form',
-  templateUrl: './dolci-form.component.html',
-  styleUrls: ['./dolci-form-component.css']
+  selector: 'app-ricetta-form',
+  templateUrl: './ricetta-form.component.html',
+  styles: [
+  ]
 })
-export class DolciFormComponent implements OnInit {
+export class RicettaFormComponent implements OnInit {
 
-  constructor(public service:DolceService,private toastr:ToastrService){}
+  constructor(public service:RicettaService,private toastr:ToastrService){}
 
   ngOnInit(): void {
   }
@@ -20,7 +22,7 @@ export class DolciFormComponent implements OnInit {
 
 
   onSubmit(form: NgForm){
-    if(this.service.formData.dolceId == 0){
+    if(this.service.formData.ricettaId == 0){
       this.insertRecord(form);
     }
     else
@@ -28,22 +30,22 @@ export class DolciFormComponent implements OnInit {
   }
 
   insertRecord(form:NgForm){
-    this.service.postDolce().subscribe(
+    this.service.postRicetta().subscribe(
       res =>{
         this.resetForm(form);
         this.service.refreshList();
-        this.toastr.success('Dolce aggiunto con successo in vetrina');
+        this.toastr.success('Ricetta aggiunta con successo');
       },
       err => {console.log(err);}
     );
   }
 
   updateRecord(form:NgForm){
-    this.service.putDolce().subscribe(
+    this.service.putRiceta().subscribe(
       res =>{
         this.resetForm(form);
         this.service.refreshList();
-        this.toastr.info('Dolce aggiornato con successo in vetrina');
+        this.toastr.info('Ricetta aggiornata');
       },
       err => {console.log(err);}
     );
@@ -51,7 +53,7 @@ export class DolciFormComponent implements OnInit {
 
   resetForm(form:NgForm){
     form.form.reset();
-    this.service.formData = new Dolce();
+    this.service.formData = new Ricetta();
   }
 
 
