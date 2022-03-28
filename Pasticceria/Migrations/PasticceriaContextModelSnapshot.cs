@@ -17,7 +17,7 @@ namespace Pasticceria.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -56,11 +56,11 @@ namespace Pasticceria.Migrations
 
             modelBuilder.Entity("Pasticceria.Models.Ricetta", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("RicettaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RicettaId"), 1L, 1);
 
                     b.Property<int>("DolceId")
                         .HasColumnType("int");
@@ -68,20 +68,32 @@ namespace Pasticceria.Migrations
                     b.Property<int>("IngredienteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantita")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Quantita")
+                        .HasColumnType("decimal(19,4)");
 
                     b.Property<string>("UM")
                         .IsRequired()
                         .HasColumnType("nvarchar(10)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("DolceId");
-
-                    b.HasIndex("IngredienteId");
+                    b.HasKey("RicettaId");
 
                     b.ToTable("Ricette");
+                });
+
+            modelBuilder.Entity("Pasticceria.Models.TabellaTest", b =>
+                {
+                    b.Property<int>("TestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestId"), 1L, 1);
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(10)");
+
+                    b.HasKey("TestId");
+
+                    b.ToTable("TabellaTest");
                 });
 
             modelBuilder.Entity("Pasticceria.Models.Vetrina", b =>
@@ -106,45 +118,7 @@ namespace Pasticceria.Migrations
 
                     b.HasKey("VetrinaId");
 
-                    b.HasIndex("DolceId");
-
                     b.ToTable("Vetrina");
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Ricetta", b =>
-                {
-                    b.HasOne("Pasticceria.Models.Dolce", null)
-                        .WithMany("Ricetta")
-                        .HasForeignKey("DolceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Pasticceria.Models.Ingrediente", null)
-                        .WithMany("Ricetta")
-                        .HasForeignKey("IngredienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Vetrina", b =>
-                {
-                    b.HasOne("Pasticceria.Models.Dolce", null)
-                        .WithMany("Vetrina")
-                        .HasForeignKey("DolceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Dolce", b =>
-                {
-                    b.Navigation("Ricetta");
-
-                    b.Navigation("Vetrina");
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Ingrediente", b =>
-                {
-                    b.Navigation("Ricetta");
                 });
 #pragma warning restore 612, 618
         }

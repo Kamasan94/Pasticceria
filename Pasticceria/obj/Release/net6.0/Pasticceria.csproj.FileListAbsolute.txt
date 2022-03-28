@@ -269,3 +269,4 @@ C:\Users\marcd\source\repos\Pasticceria\Pasticceria\obj\Release\net6.0\Pasticcer
 C:\Users\marcd\source\repos\Pasticceria\Pasticceria\obj\Release\net6.0\ref\Pasticceria.dll
 C:\Users\marcd\source\repos\Pasticceria\Pasticceria\obj\Release\net6.0\Pasticceria.pdb
 C:\Users\marcd\source\repos\Pasticceria\Pasticceria\obj\Release\net6.0\Pasticceria.genruntimeconfig.cache
+C:\Users\marcd\source\repos\Pasticceria\Pasticceria\bin\Release\net6.0\Microsoft.Extensions.Caching.Memory.dll

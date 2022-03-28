@@ -24,7 +24,23 @@
             <app-dolci-form></app-dolci-form>
         </div>
     <div class="col-sm">
-        <app-ricetta></app-ricetta>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Ingredienti</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of ricettaService.list">
+                    <td>{{d.ingredienteId}}</td>
+                    <td>{{d.quantita}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(d.ingredienteId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 

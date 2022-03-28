@@ -11,6 +11,6 @@ namespace Pasticceria.Models
     [Column(TypeName = "nvarchar(100)")]
     public string? Nome { get; set; }
 
-    public virtual ICollection<Ricetta>? Ricetta { get; set; }
+   //public virtual ICollection<Ricetta>? Ricetta { get; set; }
   }
 }

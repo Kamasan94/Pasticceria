@@ -1,4 +1,5 @@
 import { DecimalPipe } from "@angular/common";
+import { Ricetta } from "./ricetta.model";
 
 export class Dolce {
     dolceId: number=0;

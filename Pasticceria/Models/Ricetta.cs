@@ -6,7 +6,7 @@ namespace Pasticceria.Models
   public class Ricetta
   {
     [Key]
-    public int Id { get; set; }
+    public int RicettaId { get; set; }
 
     [Column(TypeName = "int")]
     public int DolceId { get; set; }
@@ -14,10 +14,10 @@ namespace Pasticceria.Models
     [Column(TypeName = "int")]
     public int IngredienteId { get; set; }
 
-    [Column(TypeName = "int")]
-    public int Quantita { get; set; }
+    [Column(TypeName = "decimal(19,4)")]
+    public decimal Quantita { get; set; }
 
     [Column(TypeName = "nvarchar(10)")]
-    public int UM { get; set; }
+    public string UM { get; set; }
   }
 }

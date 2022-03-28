@@ -12,14 +12,14 @@ using Pasticceria.Models;
 namespace Pasticceria.Migrations
 {
     [DbContext(typeof(PasticceriaContext))]
-    [Migration("20220205143659_Init")]
-    partial class Init
+    [Migration("20220223201220_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.1")
+                .HasAnnotation("ProductVersion", "6.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -58,11 +58,11 @@ namespace Pasticceria.Migrations
 
             modelBuilder.Entity("Pasticceria.Models.Ricetta", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("RicettaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RicettaId"), 1L, 1);
 
                     b.Property<int>("DolceId")
                         .HasColumnType("int");
@@ -70,18 +70,14 @@ namespace Pasticceria.Migrations
                     b.Property<int>("IngredienteId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantita")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Quantita")
+                        .HasColumnType("decimal(19,2)");
 
                     b.Property<string>("UM")
                         .IsRequired()
                         .HasColumnType("nvarchar(10)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("DolceId");
-
-                    b.HasIndex("IngredienteId");
+                    b.HasKey("RicettaId");
 
                     b.ToTable("Ricette");
                 });
@@ -108,45 +104,7 @@ namespace Pasticceria.Migrations
 
                     b.HasKey("VetrinaId");
 
-                    b.HasIndex("DolceId");
-
                     b.ToTable("Vetrina");
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Ricetta", b =>
-                {
-                    b.HasOne("Pasticceria.Models.Dolce", null)
-                        .WithMany("Ricetta")
-                        .HasForeignKey("DolceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Pasticceria.Models.Ingrediente", null)
-                        .WithMany("Ricetta")
-                        .HasForeignKey("IngredienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Vetrina", b =>
-                {
-                    b.HasOne("Pasticceria.Models.Dolce", null)
-                        .WithMany("Vetrina")
-                        .HasForeignKey("DolceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Dolce", b =>
-                {
-                    b.Navigation("Ricetta");
-
-                    b.Navigation("Vetrina");
-                });
-
-            modelBuilder.Entity("Pasticceria.Models.Ingrediente", b =>
-                {
-                    b.Navigation("Ricetta");
                 });
 #pragma warning restore 612, 618
         }

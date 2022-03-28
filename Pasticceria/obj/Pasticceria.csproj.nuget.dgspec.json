@@ -50,23 +50,23 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Microsoft.OpenApi": {
               "target": "Package",
@@ -74,7 +74,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

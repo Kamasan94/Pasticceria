@@ -39,6 +39,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Views/TabellaTests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFiZWxsYVRlc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Views/TabellaTests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFiZWxsYVRlc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Views/TabellaTests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFiZWxsYVRlc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Views/TabellaTests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFiZWxsYVRlc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Views/TabellaTests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFiZWxsYVRlc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marcd/source/repos/Pasticceria/Pasticceria/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6wg3npv7dg

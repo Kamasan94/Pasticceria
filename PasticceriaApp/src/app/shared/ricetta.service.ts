@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Ricetta } from './ricetta.model';
+import { Dolce } from './dolce.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,5 +33,19 @@ export class RicettaService {
     .then(res => this.list = res as Ricetta[])
   }
 
+  getRicettaByDolce(dolce: Dolce){
+    this.http.get(this.baseUrl)
+    .toPromise()
+    .then(res => this.list = res as Ricetta[])
+     
+    var returnList: Ricetta[] = [];
+
+    for(let i=0; i<this.list.length; i++){
+      if(this.list[i].dolceId == dolce.dolceId){
+        returnList.push(this.list[i]);
+      }
+    }
+    return returnList;
+  }
   
 }
